@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lomos Emi | Los mejores lomos de la zona</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #D32F2F;
+            --dark-bg: #1A1A1A;
+            --accent-gold: #FF6B35;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        .font-title {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .bg-red-custom {
+            background-color: var(--primary-red);
+        }
+
+        .text-red-custom {
+            color: var(--primary-red);
+        }
+
+        .border-red-custom {
+            border-color: var(--primary-red);
+        }
+
+        .bg-gold-custom {
+            background-color: var(--accent-gold);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #222;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-red);
+            border-radius: 10px;
+        }
+
+        .cart-open {
+            transform: translateX(0) !important;
+        }
+
+        .overlay-active {
+            display: block !important;
+        }
+
+        @keyframes bounce-subtle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .cta-bounce {
+            animation: bounce-subtle 2s infinite;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Overlay para el carrito -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/70 z-40 hidden" onclick="toggleCart()"></div>
+
+    <!-- Navegación -->
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="h-12">
+                <img src="public/Logo emi.png" alt="Lomos Emi Logo" class="h-full object-contain">
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()"
+                    class="relative p-2 bg-white/5 rounded-full hover:bg-white/10 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-count"
+                        class="absolute -top-1 -right-1 bg-red-custom text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center pt-16 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="public/Lomo 50cm.png" alt="Lomo Argentino" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4">
+            <h2 class="font-title text-6xl md:text-8xl mb-2 tracking-tight">LOS MEJORES LOMOS <br><span
+                    class="text-red-custom">DE LA ZONA</span></h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto">Recién hechos, sin vueltas y con el sabor
+                que ya conocés. Pedí ahora y comé como corresponde.</p>
+            <a href="#menu"
+                class="bg-red-custom hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all cta-bounce inline-block shadow-lg shadow-red-900/50">
+                VER MENÚ Y PEDIR
+            </a>
+        </div>
+    </section>
+
+    <!-- Promociones Section -->
+    <section id="promociones" class="max-w-[1400px] mx-auto px-4 py-10 border-b border-white/10">
+        <h3 class="font-title text-4xl text-accent-gold mb-8 text-center tracking-wide">🔥 SUPER PROMOS & COMBOS 🔥</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Super Promos (Salchipapas) -->
+            <div
+                class="bg-gradient-to-br from-red-900/40 to-black border border-red-500/30 p-6 rounded-2xl relative overflow-hidden group flex flex-col">
+                <div
+                    class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                    SUPER PROMO</div>
+                <div class="flex gap-4 items-center mb-4">
+                    <img src="public/Logo emi.png" class="w-24 h-24 object-contain rounded-xl" alt="Promo">
+                    <div>
+                        <p class="text-xs text-gray-400">Las promos más bombas de la casa.</p>
+                    </div>
+                </div>
+
+                <!-- Lista de opciones manuales -->
+                <div class="flex-1 space-y-2 mb-4">
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 Lomi Entera + Fritas</span>
+                        <button onclick="addSpecificCombo('Promo Salchi: 1 Lomi Entera', 36000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$36.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">Media Lomi + Fritas</span>
+                        <button onclick="addSpecificCombo('Promo Salchi: Media Lomi', 28000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$28.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 Barroluco + Fritas</span>
+                        <button onclick="addSpecificCombo('Promo Salchi: 1 Barroluco', 26000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$26.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">2 Lomos Gig + Fritas</span>
+                        <button onclick="addSpecificCombo('Promo Salchi: 2 Lomos Gig', 48000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$48.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combos Lomipizza -->
+            <div
+                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="public/lomipizza.png"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt="Combo Lomipizza">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
+                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">LOMIPIZZAS</h4>
+                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
+                        SALCHIPAPA</span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+                    <p class="text-gray-400 text-sm mb-4">Lo mejor de dos mundos + Salchipapas.</p>
+
+                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
+                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
+                            Opción:</label>
+                        <select id="combo-lomipizza-select" onchange="updateComboPrice('lomipizza')"
+                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
+                            <option value="1 Lomi Entera|36000">1 Lomi Entera ($36.000)</option>
+                            <option value="Media Lomi|28000">Media Lomi ($28.000)</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Precio Final</span>
+                            <span id="combo-lomipizza-display"
+                                class="font-title text-3xl text-red-custom">$36.000</span>
+                        </div>
+                        <button onclick="addComboToCart('lomipizza')"
+                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
+                            AGREGAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combos Mix -->
+            <div
+                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="public/Salchipapa.png"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt="Combo Mix">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
+                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">ESPECIALES</h4>
+                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
+                        SALCHIPAPA</span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+                    <p class="text-gray-400 text-sm mb-4">Barrolucos y Lomos Gigantes recargados.</p>
+
+                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
+                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
+                            Opción:</label>
+                        <select id="combo-mix-select" onchange="updateComboPrice('mix')"
+                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
+                            <option value="1 Barroluco|26000">1 Barroluco ($26.000)</option>
+                            <option value="2 Lomos Gigantes|48000">2 Lomos Gigantes ($48.000)</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Precio Final</span>
+                            <span id="combo-mix-display" class="font-title text-3xl text-red-custom">$26.000</span>
+                        </div>
+                        <button onclick="addComboToCart('mix')"
+                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
+                            AGREGAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combos Burger Card Interactiva -->
+            <div
+                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="public/burger simple.png"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt="Combo Burger">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
+                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">COMBOS BURGER
+                    </h4>
+                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
+                        FRITAS</span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+                    <p class="text-gray-400 text-sm mb-4">Hamburguesas caseras + Papas Fritas. ¡Elegí tu pack ideal!</p>
+
+                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
+                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
+                            Cantidad:</label>
+                        <select id="combo-burger-select" onchange="updateComboPrice('burger')"
+                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
+                            <option value="1 Burger + Frita|8000">1 Burger + Frita ($8.000)</option>
+                            <option value="2 Burger + Frita|13000">2 Burger + Frita ($13.000)</option>
+                            <option value="3 Burger + Frita|18000">3 Burger + Frita ($18.000)</option>
+                            <option value="4 Burger + Frita|23000">4 Burger + Frita ($23.000)</option>
+                            <option value="5 Burger + Frita|28000">5 Burger + Frita ($28.000)</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Precio Final</span>
+                            <span id="combo-burger-display" class="font-title text-3xl text-red-custom">$8.000</span>
+                        </div>
+                        <button onclick="addComboToCart('burger')"
+                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
+                            AGREGAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combos Lomos Card Interactiva -->
+            <div
+                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="public/Lomo 50cm.png"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt="Combo Lomos">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
+                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">COMBOS LOMOS</h4>
+                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
+                        FRITAS</span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+                    <p class="text-gray-400 text-sm mb-4">Lomos/Pachatas + Papas Fritas. ¡Para compartir!</p>
+
+                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
+                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
+                            Cantidad:</label>
+                        <select id="combo-lomo-select" onchange="updateComboPrice('lomo')"
+                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
+                            <option value="1 Lomo + Frita|15000">1 Lomo + Frita ($15.000)</option>
+                            <option value="2 Lomo + Frita|27000">2 Lomo + Frita ($27.000)</option>
+                            <option value="3 Lomo + Frita|39000">3 Lomo + Frita ($39.000)</option>
+                            <option value="4 Lomo + Frita|51000">4 Lomo + Frita ($51.000)</option>
+                            <option value="5 Lomo + Frita|63000">5 Lomo + Frita ($63.000)</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Precio Final</span>
+                            <span id="combo-lomo-display" class="font-title text-3xl text-red-custom">$15.000</span>
+                        </div>
+                        <button onclick="addComboToCart('lomo')"
+                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
+                            AGREGAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <main id="menu" class="max-w-7xl mx-auto px-4 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <h3 class="font-title text-4xl text-white mb-2">NUESTRA CARTA</h3>
+                <p class="text-gray-400">Elegí lo que más te guste y armá tu pedido.</p>
+            </div>
+            <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                <button onclick="filterMenu('todos')"
+                    class="bg-red-custom text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">TODOS</button>
+                <button onclick="filterMenu('lomos')"
+                    class="bg-white/5 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">LOMOS</button>
+                <button onclick="filterMenu('pizzas')"
+                    class="bg-white/5 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">PIZZAS</button>
+                <button onclick="filterMenu('hamburguesas')"
+                    class="bg-white/5 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">HAMBURGUESAS</button>
+                <button onclick="filterMenu('sandwiches')"
+                    class="bg-white/5 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">SANDWICHES</button>
+                <button onclick="filterMenu('minutas')"
+                    class="bg-white/5 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">MINUTAS</button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Los productos se cargan via JS -->
+        </div>
+    </main>
+
+    <!-- Sidebar Carrito -->
+    <aside id="cart-sidebar"
+        class="fixed top-0 right-0 w-full md:w-[400px] h-full bg-zinc-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+            <h4 class="font-title text-2xl">TU PEDIDO</h4>
+            <button onclick="toggleCart()" class="p-2 hover:bg-white/10 rounded-full transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Items del carrito -->
+            <div id="empty-cart-msg" class="text-center py-20 text-gray-500">
+                <p>Tu carrito está vacío.</p>
+                <p class="text-sm mt-2">¡Agregá algo rico para empezar!</p>
+            </div>
+        </div>
+
+        <div class="p-6 bg-black/40 border-t border-white/10 space-y-4">
+            <div class="flex justify-between items-center text-gray-400 text-sm">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0</span>
+            </div>
+            <div class="flex justify-between items-center text-xl font-bold">
+                <span>TOTAL</span>
+                <span id="cart-total" class="text-red-custom">$0</span>
+            </div>
+            <button id="btn-whatsapp" onclick="sendToWhatsApp()" disabled
+                class="w-full bg-red-custom disabled:bg-gray-700 disabled:cursor-not-allowed text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-red-700 transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+                PEDIR POR WHATSAPP
+            </button>
+            <p id="error-fallback" class="hidden text-center text-xs text-gray-500 italic">Si el botón no funciona,
+                escribinos al 11 1234 5678</p>
+        </div>
+    </aside>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5492645308449" target="_blank"
+        class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20b85c] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        <!-- Tooltip -->
+        <span
+            class="absolute right-full mr-3 bg-white text-black text-xs font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            ¡Hicanos tu consulta!
+        </span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="font-title text-2xl text-red-custom mb-4">LOMOS EMI</h4>
+                <p class="text-gray-400 text-sm">Autenticidad en cada bocado. El secreto está en el lomo y en el amor
+                    que le ponemos.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">HORARIOS</h5>
+                <ul class="text-gray-400 text-sm space-y-2">
+                    <li>Todos los días: 21:00 a 02:00</li>
+                </ul>
+            </div>
+            <div class="flex flex-col items-start">
+                <h5 class="font-bold mb-4">UBICACIÓN</h5>
+                <p class="text-gray-400 text-sm mb-4">Av. Siempre Viva 742, Córdoba, Argentina.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-red-custom transition">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-red-custom transition">Facebook</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grow Labs Branding -->
+        <div class="mt-12 flex flex-col items-center justify-center border-t border-white/5 pt-8">
+            <a href="https://growlabs.lat/" target="_blank" class="flex flex-col items-center group">
+                <div
+                    class="w-12 h-12 rounded-full overflow-hidden border-2 border-transparent group-hover:border-accent-gold transition-all mb-2">
+                    <img src="public/logogrow.png" alt="Grow Labs" class="w-full h-full object-cover">
+                </div>
+                <p class="text-xs text-gray-500 group-hover:text-white transition">Hecho con ❤️ por <span
+                        class="font-bold">Grow Labs</span></p>
+                <p class="text-[10px] text-gray-600 mt-0.5 group-hover:text-accent-gold transition">Conoce nuestros
+                    servicios</p>
+            </a>
+            <div class="text-center mt-4 text-gray-700 text-[10px]">
+                &copy; 2026 Lomos Emi. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuración y Datos
+        const PHONE_NUMBER = "5492645308449";
+
+        const PRODUCTS = [
+            // PIZZAS
+            { id: 101, category: 'pizzas', name: 'Pizza Muzza', desc: 'Salsa, muzzarella, aceitunas.', price: 8000, img: 'public/Pizza Muzzarela.png' },
+            { id: 102, category: 'pizzas', name: 'Pizza Especial', desc: 'Jamón, morrones, aceitunas.', price: 9000, img: 'public/Pizza Especial.png' },
+            { id: 103, category: 'pizzas', name: 'Pizza Emi', desc: 'La especialidad de la casa.', price: 10000, img: 'public/Pizza Emi.png' },
+
+            // LOMIPIZZAS
+            { id: 201, category: 'pizzas', name: 'Lomipizza Entera', desc: 'Combinación bomba de lomo y pizza.', price: 28000, img: 'public/lomipizza.png' },
+            { id: 202, category: 'pizzas', name: 'Lomipizza Mitad', desc: 'Media porción de nuestra lomipizza.', price: 20000, img: 'public/lomipizza.png' },
+
+            // BURGERS (Con Variantes)
+            {
+                id: 301, category: 'hamburguesas', name: 'Burger', desc: 'Hamburguesa casera clásica.', price: 5000, img: 'public/burger simple.png',
+                isDoubleOption: true, doublePriceDelta: 1000 // Especial 5000, Doble 6000 -> Diff 1000
+            },
+            {
+                id: 302, category: 'hamburguesas', name: 'Pan Papas', desc: 'Con exclusivo pan de papa.', price: 6000, img: 'public/Hamburguesa pan de papa.png',
+                isDoubleOption: true, doublePriceDelta: 1000 // Esp 6000, Doble 7000
+            },
+            {
+                id: 303, category: 'hamburguesas', name: 'Gigante', desc: 'Tamaño XL para valientes.', price: 7000, img: 'public/Hamburguesa Pan Normal.png',
+                isDoubleOption: true, doublePriceDelta: 2000 // Esp 7000, Doble 9000 -> Diff 2000
+            },
+
+            // LOMOS & PACHATAS (Con Variantes)
+            {
+                id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 6500, img: 'public/Lomo 25cm.png',
+                isDoubleOption: true, doublePriceDelta: 4000
+            },
+            {
+                id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 12000, img: 'public/Lomo 50cm.png',
+                isDoubleOption: true, doublePriceDelta: 8000 // Esp 12000, Doble 20000 -> Diff 8000
+            },
+            {
+                id: 402, category: 'sandwiches', name: 'Pachata', desc: 'Nuestro sándwich estrella.', price: 12000, img: 'public/Pachata emi.png',
+                isDoubleOption: true, doublePriceDelta: 8000 // Esp 12000, Doble 20000
+            },
+
+            // MIGAS & TOSTADOS
+            { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 5000, img: 'public/Tostado Miga.png' },
+            { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 6000, img: 'public/Tostado Miga.png' },
+            { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 18000, img: 'public/Barroluco.png' },
+
+            // FRITAS & MINUTAS
+            { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 4000, img: 'public/papas fritas comunes.png' },
+            { id: 602, category: 'minutas', name: 'Papas Grandes', desc: 'Para compartir.', price: 7000, img: 'public/papas fritas comunes.png' },
+            {
+                id: 603, category: 'minutas', name: 'Salchipapa', desc: 'Papas con salchicha. ¡Agregale cosas!', price: 9000, img: 'public/Salchipapa.png',
+                addons: [
+                    { name: 'Cheddar', price: 0 },
+                    { name: 'Panceta', price: 0 }
+                ]
+            }
+        ];
+
+        let cart = [];
+
+        function init() {
+            renderProducts(PRODUCTS);
+            updateCartUI();
+        }
+
+        // Render Cards
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = items.map(p => {
+                // Generar HTML de opciones
+                let optionsInfo = '';
+
+                // Opción Doble
+                if (p.isDoubleOption) {
+                    optionsInfo += `
+                        <div class="mt-3 mb-2 bg-black/20 p-2 rounded-lg">
+                            <label class="flex items-center gap-2 cursor-pointer select-none text-sm">
+                                <input type="checkbox" id="double-${p.id}" class="w-4 h-4 accent-red-600" onchange="updateCardPrice(${p.id})">
+                                doble carne (+$${p.doublePriceDelta})
+                            </label>
+                        </div>
+                    `;
+                }
+
+                // Addons (Salchipapa)
+                if (p.addons && p.addons.length > 0) {
+                    optionsInfo += `<div class="mt-3 mb-2 bg-black/20 p-2 rounded-lg space-y-1">
+                        <p class="text-xs text-gray-400 mb-1">Agregados:</p>
+                        ${p.addons.map((add, idx) => `
+                            <label class="flex items-center gap-2 cursor-pointer select-none text-sm">
+                                <input type="checkbox" id="addon-${p.id}-${idx}" value="${add.name}" class="w-4 h-4 accent-red-600" onchange="updateCardPrice(${p.id})">
+                                ${add.name} ${add.price > 0 ? `(+$${add.price})` : ''}
+                            </label>
+                        `).join('')}
+                    </div>`;
+                }
+
+                return `
+                <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-red-custom/50 transition-all group flex flex-col h-full relative" id="card-${p.id}">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h5 class="font-bold text-lg leading-tight mr-2">${p.name}</h5>
+                            <span class="text-red-custom font-bold text-xl whitespace-nowrap" id="price-display-${p.id}">$${p.price}</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2 min-h-[2.5em]">${p.desc}</p>
+                        
+                        <!-- Area de Opciones -->
+                        ${optionsInfo}
+                        
+                        <div class="mt-auto flex items-center justify-between gap-2 pt-3 border-t border-white/5">
+                            <div class="flex items-center bg-white/10 rounded-lg overflow-hidden border border-white/5">
+                                <button onclick="changeQtyUI(${p.id}, -1)" class="px-3 py-1 hover:bg-white/10">-</button>
+                                <input type="text" id="qty-${p.id}" value="1" readonly class="w-8 text-center bg-transparent text-sm focus:outline-none">
+                                <button onclick="changeQtyUI(${p.id}, 1)" class="px-3 py-1 hover:bg-white/10">+</button>
+                            </div>
+                            <button onclick="addToCart(${p.id})" class="bg-red-custom hover:bg-red-700 text-white px-3 py-2 rounded-lg text-xs font-bold transition flex-1 flex items-center justify-center gap-1 group-active:scale-95">
+                                AGREGAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // Live Price Update on Card
+        function updateCardPrice(id) {
+            const product = PRODUCTS.find(p => p.id === id);
+            let currentPrice = product.price;
+
+            // Check Double
+            const doubleCheck = document.getElementById(`double-${id}`);
+            if (doubleCheck && doubleCheck.checked) {
+                currentPrice += product.doublePriceDelta;
+            }
+
+            // Check Addons
+            if (product.addons) {
+                product.addons.forEach((add, idx) => {
+                    const el = document.getElementById(`addon-${id}-${idx}`);
+                    if (el && el.checked) {
+                        currentPrice += add.price;
+                    }
+                });
+            }
+
+            // Update UI
+            document.getElementById(`price-display-${id}`).innerText = `$${currentPrice}`;
+        }
+
+        function changeQtyUI(id, delta) {
+            const input = document.getElementById(`qty-${id}`);
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            input.value = val;
+        }
+
+        function filterMenu(cat) {
+            const buttons = document.querySelectorAll('#menu button');
+            buttons.forEach(btn => btn.classList.remove('bg-red-custom', 'text-white'));
+            buttons.forEach(btn => btn.classList.add('bg-white/5', 'text-white'));
+
+            event.target.classList.remove('bg-white/5');
+            event.target.classList.add('bg-red-custom');
+
+            if (cat === 'todos') {
+                renderProducts(PRODUCTS);
+            } else {
+                const filtered = PRODUCTS.filter(p => p.category === cat);
+                renderProducts(filtered);
+            }
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-sidebar').classList.toggle('cart-open');
+            document.getElementById('cart-overlay').classList.toggle('hidden');
+            document.body.style.overflow = document.body.style.overflow === 'hidden' ? 'auto' : 'hidden';
+        }
+
+        function addToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            const qtyInput = document.getElementById(`qty-${productId}`);
+            const qty = parseInt(qtyInput.value);
+
+            let finalPrice = product.price;
+            let finalName = product.name;
+            let extras = [];
+
+            // Check Variants
+            const doubleCheck = document.getElementById(`double-${productId}`);
+            if (doubleCheck && doubleCheck.checked) {
+                finalPrice += product.doublePriceDelta;
+                finalName += " (DOBLE)";
+            }
+
+            // Check Addons
+            if (product.addons) {
+                product.addons.forEach((add, idx) => {
+                    const el = document.getElementById(`addon-${productId}-${idx}`);
+                    if (el && el.checked) {
+                        finalPrice += add.price;
+                        extras.push(add.name);
+                    }
+                });
+            }
+
+            if (extras.length > 0) {
+                finalName += ` + ${extras.join(', ')}`;
+            }
+
+            // Add to Cart
+            const cartId = `${productId}-${finalName}`;
+
+            const existing = cart.find(item => item.cartId === cartId);
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({
+                    ...product,
+                    cartId: cartId,
+                    name: finalName,
+                    price: finalPrice,
+                    qty
+                });
+            }
+
+            // Reset UI inputs
+            qtyInput.value = 1;
+            if (doubleCheck) doubleCheck.checked = false;
+            if (product.addons) {
+                product.addons.forEach((_, idx) => {
+                    const el = document.getElementById(`addon-${productId}-${idx}`);
+                    if (el) el.checked = false;
+                });
+            }
+            updateCardPrice(productId);
+
+            updateCartUI();
+
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "¡Agregado!";
+            btn.classList.add('bg-green-600');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('bg-green-600');
+            }, 1000);
+
+            // toggleCart(); // Removed to allow multiple items
+        }
+
+        function updateCartUI() {
+            const itemsContainer = document.getElementById('cart-items');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const countBadge = document.getElementById('cart-count');
+            const totalEl = document.getElementById('cart-total');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const btnWs = document.getElementById('btn-whatsapp');
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '';
+                itemsContainer.appendChild(emptyMsg);
+                btnWs.disabled = true;
+                countBadge.innerText = 0;
+                totalEl.innerText = "$0";
+                subtotalEl.innerText = "$0";
+                return;
+            }
+
+            emptyMsg.remove();
+            let total = 0;
+            let count = 0;
+
+            itemsContainer.innerHTML = cart.map((item, index) => {
+                total += item.price * item.qty;
+                count += item.qty;
+                return `
+                    <div class="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/5 animate-fade-in">
+                        <img src="${item.img}" class="w-16 h-16 object-cover rounded-lg" alt="">
+                        <div class="flex-1">
+                            <h6 class="text-sm font-bold text-white leading-tight">${item.name}</h6>
+                            <p class="text-xs text-red-custom">$${item.price.toLocaleString()} c/u</p>
+                            <div class="flex items-center gap-3 mt-2">
+                                <button onclick="updateQty(${index}, -1)" class="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-xs text-white hover:bg-white/20">-</button>
+                                <span class="text-sm font-mono">${item.qty}</span>
+                                <button onclick="updateQty(${index}, 1)" class="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-xs text-white hover:bg-white/20">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-bold text-accent-gold">$${(item.price * item.qty).toLocaleString()}</p>
+                            <button onclick="removeItem(${index})" class="text-xs text-gray-500 hover:text-red-500 mt-2 transition-colors">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            countBadge.innerText = count;
+            subtotalEl.innerText = `$${total.toLocaleString()}`;
+            totalEl.innerText = `$${total.toLocaleString()}`;
+            btnWs.disabled = false;
+        }
+
+        function updateQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function sendToWhatsApp() {
+            if (cart.length === 0) return;
+
+            let total = 0;
+            let itemsText = cart.map(item => {
+                total += item.price * item.qty;
+                return `• ${item.qty}x ${item.name} ($${(item.price * item.qty).toLocaleString()})`;
+            }).join('\n');
+
+            const message = `Hola Lomos Emi! 👋\nQuiero hacer un pedido:\n\n${itemsText}\n\n━━━━━━━━━━━━━━\n💰 TOTAL: $${total.toLocaleString()}\n━━━━━━━━━━━━━━\nNombre: \nDirección: \nForma de Pago: `;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+
+        // --- Logic for Promos & Combos ---
+
+        function updateComboPrice(type) {
+            const select = document.getElementById(`combo-${type}-select`);
+            const [name, price] = select.value.split('|');
+            document.getElementById(`combo-${type}-display`).innerText = `$${parseInt(price).toLocaleString()}`;
+        }
+
+        function addComboToCart(type) {
+            const select = document.getElementById(`combo-${type}-select`);
+            const [name, priceRaw] = select.value.split('|');
+            const price = parseInt(priceRaw);
+
+            // Image mapping
+            const imgMap = {
+                'burger': 'public/burger simple.png',
+                'lomo': 'public/Lomo 50cm.png',
+                'lomipizza': 'public/lomipizza.png',
+                'mix': 'public/Salchipapa.png'
+            };
+
+            const cartId = `promo-${type}-${name}`;
+
+            const existing = cart.find(item => item.cartId === cartId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: 9999, // Dummy ID
+                    cartId: cartId,
+                    category: 'promos',
+                    name: `PROMO: ${name}`,
+                    desc: 'Combo en oferta',
+                    price: price,
+                    img: imgMap[type],
+                    qty: 1
+                });
+            }
+
+            updateCartUI();
+
+            // Visual feedback
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "¡Agregado!";
+            btn.classList.add('bg-green-600');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('bg-green-600');
+            }, 1000);
+
+            // toggleCart();
+        }
+
+        function addSpecificCombo(name, price) {
+            const cartId = `promo-specific-${name}`;
+            const existing = cart.find(item => item.cartId === cartId);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: 8888,
+                    cartId: cartId,
+                    category: 'promos',
+                    name: name,
+                    desc: 'Super Promo',
+                    price: price,
+                    img: 'public/Flyer Promos.png',
+                    qty: 1
+                });
+            }
+            updateCartUI();
+
+            // Visual feedback for specific combos (buttons with +)
+            const btn = event.target.closest('button');
+            if (btn) {
+                const originalContent = btn.innerHTML;
+                btn.innerHTML = '¡Listo!';
+                btn.classList.add('text-green-500');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('text-green-500');
+                }, 1000);
+            }
+
+            // toggleCart();
+        }
+
+        window.onload = init;
+    </script>
+</body>
+
+</html>
