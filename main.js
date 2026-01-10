@@ -178,7 +178,11 @@ function filterMenu(cat) {
 function toggleCart() {
     document.getElementById('cart-sidebar').classList.toggle('cart-open');
     document.getElementById('cart-overlay').classList.toggle('hidden');
-    document.body.style.overflow = document.body.style.overflow === 'hidden' ? 'auto' : 'hidden';
+
+    // Solo bloquear scroll en móviles
+    if (window.innerWidth < 768) {
+        document.body.style.overflow = document.body.style.overflow === 'hidden' ? 'auto' : 'hidden';
+    }
 }
 
 function addToCart(productId) {
@@ -243,7 +247,7 @@ function addToCart(productId) {
 
     const btn = event.target;
     // Safety check if event target exists 
-    if(btn) {
+    if (btn) {
         const originalText = btn.innerText;
         btn.innerText = "¡Agregado!";
         btn.classList.add('bg-green-600');
@@ -380,7 +384,7 @@ function addComboToCart(type) {
 
     // Visual feedback
     const btn = event.target;
-    if(btn) {
+    if (btn) {
         const originalText = btn.innerText;
         btn.innerText = "¡Agregado!";
         btn.classList.add('bg-green-600');
@@ -413,12 +417,12 @@ function addSpecificCombo(name, price) {
     // In JS (addSpecificCombo) I think it was using 'public/Flyer Promos.png' in the original code.
     // I should update it to '/Logo emi.png' to match the card, OR keep Flyer if that's what we want in cart.
     // I'll set it to '/Logo emi.png' to be consistent with the card update.
-    
+
     // Actually, looking at Step 276 HTML Code:
     // HTML: img src="public/Logo emi.png"
     // JS `addSpecificCombo`: `img: 'public/Flyer Promos.png'` (inside the function).
     // So the cart shows the old image? I should fix this to `img: '/Logo emi.png'`.
-    
+
     updateCartUI();
 
     // Visual feedback for specific combos (buttons with +)
