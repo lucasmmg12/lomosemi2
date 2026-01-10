@@ -185,79 +185,97 @@ function toggleCart() {
     }
 }
 
-function addToCart(productId) {
-    const product = PRODUCTS.find(p => p.id === productId);
-    const qtyInput = document.getElementById(`qty-${productId}`);
-    const qty = parseInt(qtyInput.value);
-
-    let finalPrice = product.price;
-    let finalName = product.name;
-    let extras = [];
-
-    // Check Variants
-    const doubleCheck = document.getElementById(`double-${productId}`);
-    if (doubleCheck && doubleCheck.checked) {
-        finalPrice += product.doublePriceDelta;
-        finalName += " (DOBLE)";
-    }
-
-    // Check Addons
-    if (product.addons) {
-        product.addons.forEach((add, idx) => {
-            const el = document.getElementById(`addon-${productId}-${idx}`);
-            if (el && el.checked) {
-                finalPrice += add.price;
-                extras.push(add.name);
-            }
-        });
-    }
-
-    if (extras.length > 0) {
-        finalName += ` + ${extras.join(', ')}`;
-    }
-
-    // Add to Cart
-    const cartId = `${productId}-${finalName}`;
-
-    const existing = cart.find(item => item.cartId === cartId);
-    if (existing) {
-        existing.qty += qty;
-    } else {
-        cart.push({
-            ...product,
-            cartId: cartId,
-            name: finalName,
-            price: finalPrice,
-            qty
-        });
-    }
-
-    // Reset UI inputs
-    qtyInput.value = 1;
-    if (doubleCheck) doubleCheck.checked = false;
-    if (product.addons) {
-        product.addons.forEach((_, idx) => {
-            const el = document.getElementById(`addon-${productId}-${idx}`);
-            if (el) el.checked = false;
-        });
-    }
-    updateCardPrice(productId);
-
-    updateCartUI();
-
-    const btn = event.target;
-    // Safety check if event target exists 
-    if (btn) {
-        const originalText = btn.innerText;
-        btn.innerText = "¡Agregado!";
-        btn.classList.add('bg-green-600');
+// Helper to safely handle button feedback
+function visualFeedback(btn, text = "¡Agregado!", colorClass = "bg-green-600") {
+    if (!btn) return;
+    try {
+        const originalText = btn.innerText || btn.innerHTML; // Safety for icons
+        btn.innerText = text;
+        btn.classList.add(colorClass);
         setTimeout(() => {
             btn.innerText = originalText;
-            btn.classList.remove('bg-green-600');
+            btn.classList.remove(colorClass);
         }, 1000);
+    } catch (e) {
+        console.warn("Visual feedback failed", e);
     }
+}
 
-    // toggleCart(); // Removed to allow multiple items
+function addToCart(productId) {
+    try {
+        const product = PRODUCTS.find(p => p.id === productId);
+        if (!product) {
+            console.error("Product not found:", productId);
+            return;
+        }
+
+        const qtyInput = document.getElementById(`qty-${productId}`);
+        const qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+
+        let finalPrice = product.price;
+        let finalName = product.name;
+        let extras = [];
+
+        // Check Variants
+        const doubleCheck = document.getElementById(`double-${productId}`);
+        if (doubleCheck && doubleCheck.checked) {
+            finalPrice += product.doublePriceDelta;
+            finalName += " (DOBLE)";
+        }
+
+        // Check Addons
+        if (product.addons) {
+            product.addons.forEach((add, idx) => {
+                const el = document.getElementById(`addon-${productId}-${idx}`);
+                if (el && el.checked) {
+                    finalPrice += add.price;
+                    extras.push(add.name);
+                }
+            });
+        }
+
+        if (extras.length > 0) {
+            finalName += ` + ${extras.join(', ')}`;
+        }
+
+        // Add to Cart
+        const cartId = `${productId}-${finalName.replace(/\s+/g, '-')}`;
+
+        const existing = cart.find(item => item.cartId === cartId);
+        if (existing) {
+            existing.qty += qty;
+        } else {
+            cart.push({
+                ...product,
+                cartId: cartId,
+                name: finalName,
+                price: finalPrice,
+                qty
+            });
+        }
+
+        // Reset UI inputs
+        if (qtyInput) qtyInput.value = 1;
+        if (doubleCheck) doubleCheck.checked = false;
+        if (product.addons) {
+            product.addons.forEach((_, idx) => {
+                const el = document.getElementById(`addon-${productId}-${idx}`);
+                if (el) el.checked = false;
+            });
+        }
+        updateCardPrice(productId);
+
+        updateCartUI();
+
+        // Safe visual feedback
+        const evt = window.event;
+        const btn = evt ? (evt.target.closest('button') || evt.target) : null;
+        visualFeedback(btn);
+
+    } catch (err) {
+        console.error("Error in addToCart:", err);
+        alert("Hubo un error al agregar el producto. Por favor intentá de nuevo.");
+    }
 }
 
 function updateCartUI() {
@@ -270,7 +288,9 @@ function updateCartUI() {
 
     if (cart.length === 0) {
         itemsContainer.innerHTML = '';
-        itemsContainer.appendChild(emptyMsg);
+        if (emptyMsg) itemsContainer.appendChild(emptyMsg);
+        else itemsContainer.innerHTML = '<div id="empty-cart-msg" class="text-center py-20 text-gray-500"><p>Tu carrito está vacío.</p><p class="text-sm mt-2">¡Agregá algo rico para empezar!</p></div>';
+
         btnWs.disabled = true;
         countBadge.innerText = 0;
         totalEl.innerText = "$0";
@@ -278,7 +298,6 @@ function updateCartUI() {
         return;
     }
 
-    emptyMsg.remove();
     let total = 0;
     let count = 0;
 
@@ -350,91 +369,78 @@ function updateComboPrice(type) {
 }
 
 function addComboToCart(type) {
-    const select = document.getElementById(`combo-${type}-select`);
-    const [name, priceRaw] = select.value.split('|');
-    const price = parseInt(priceRaw);
+    try {
+        const select = document.getElementById(`combo-${type}-select`);
+        const [name, priceRaw] = select.value.split('|');
+        const price = parseInt(priceRaw);
 
-    // Image mapping
-    const imgMap = {
-        'burger': '/burger simple.webp',
-        'lomo': '/Lomo 50cm.webp',
-        'lomipizza': '/lomipizza.webp',
-        'mix': '/Salchipapa.webp'
-    };
+        // Image mapping
+        const imgMap = {
+            'burger': '/burger simple.webp',
+            'lomo': '/Lomo 50cm.webp',
+            'lomipizza': '/lomipizza.webp',
+            'mix': '/Salchipapa.webp'
+        };
 
-    const cartId = `promo-${type}-${name}`;
+        const cartId = `promo-${type}-${name.replace(/\s+/g, '-')}`;
 
-    const existing = cart.find(item => item.cartId === cartId);
-    if (existing) {
-        existing.qty += 1;
-    } else {
-        cart.push({
-            id: 9999, // Dummy ID
-            cartId: cartId,
-            category: 'promos',
-            name: `PROMO: ${name}`,
-            desc: 'Combo en oferta',
-            price: price,
-            img: imgMap[type],
-            qty: 1
-        });
-    }
+        const existing = cart.find(item => item.cartId === cartId);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({
+                id: 9999 + Math.floor(Math.random() * 1000), // Random ID to avoid collisions
+                cartId: cartId,
+                category: 'promos',
+                name: `PROMO: ${name}`,
+                desc: 'Combo en oferta',
+                price: price,
+                img: imgMap[type],
+                qty: 1
+            });
+        }
 
-    updateCartUI();
+        updateCartUI();
 
-    // Visual feedback
-    const btn = event.target;
-    if (btn) {
-        const originalText = btn.innerText;
-        btn.innerText = "¡Agregado!";
-        btn.classList.add('bg-green-600');
-        setTimeout(() => {
-            btn.innerText = originalText;
-            btn.classList.remove('bg-green-600');
-        }, 1000);
+        // Safe visual feedback
+        const evt = window.event;
+        const btn = evt ? (evt.target.closest('button') || evt.target) : null;
+        visualFeedback(btn);
+
+    } catch (err) {
+        console.error("Error in addComboToCart:", err);
     }
 }
 
 function addSpecificCombo(name, price) {
-    const cartId = `promo-specific-${name}`;
-    const existing = cart.find(item => item.cartId === cartId);
+    try {
+        const cartId = `promo-specific-${name.replace(/\s+/g, '-')}`;
+        const existing = cart.find(item => item.cartId === cartId);
 
-    if (existing) {
-        existing.qty += 1;
-    } else {
-        cart.push({
-            id: 8888,
-            cartId: cartId,
-            category: 'promos',
-            name: name,
-            desc: 'Super Promo',
-            price: price,
-            img: '/Logo emi.webp', // Or Logo? Step 246 replaced it with Logo. I will use Logo here if it matches the visual.
-            qty: 1
-        });
-    }
-    // Wait, in Step 246 I replaced the image in HTML with Logo.
-    // In JS (addSpecificCombo) I think it was using 'public/Flyer Promos.png' in the original code.
-    // I should update it to '/Logo emi.png' to match the card, OR keep Flyer if that's what we want in cart.
-    // I'll set it to '/Logo emi.png' to be consistent with the card update.
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({
+                id: 8888 + Math.floor(Math.random() * 1000),
+                cartId: cartId,
+                category: 'promos',
+                name: name,
+                desc: 'Super Promo',
+                price: price,
+                img: '/Logo emi.webp',
+                qty: 1
+            });
+        }
 
-    // Actually, looking at Step 276 HTML Code:
-    // HTML: img src="public/Logo emi.png"
-    // JS `addSpecificCombo`: `img: 'public/Flyer Promos.png'` (inside the function).
-    // So the cart shows the old image? I should fix this to `img: '/Logo emi.png'`.
+        updateCartUI();
 
-    updateCartUI();
+        // Safe visual feedback
+        const evt = window.event;
+        const btn = evt ? (evt.target.closest('button') || evt.target) : null;
+        visualFeedback(btn, '¡Listo!', 'text-green-500');
 
-    // Visual feedback for specific combos (buttons with +)
-    const btn = event.target.closest('button');
-    if (btn) {
-        const originalContent = btn.innerHTML;
-        btn.innerHTML = '¡Listo!';
-        btn.classList.add('text-green-500');
-        setTimeout(() => {
-            btn.innerHTML = originalContent;
-            btn.classList.remove('text-green-500');
-        }, 1000);
+    } catch (err) {
+        console.error("Error in addSpecificCombo:", err);
     }
 }
 
