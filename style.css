@@ -1,0 +1,81 @@
+:root {
+    --primary-red: #D32F2F;
+    --dark-bg: #1A1A1A;
+    --accent-gold: #FF6B35;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.font-title {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.bg-red-custom {
+    background-color: var(--primary-red);
+}
+
+.text-red-custom {
+    color: var(--primary-red);
+}
+
+.border-red-custom {
+    border-color: var(--primary-red);
+}
+
+.bg-gold-custom {
+    background-color: var(--accent-gold);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 10px;
+}
+
+.cart-open {
+    transform: translateX(0) !important;
+}
+
+.overlay-active {
+    display: block !important;
+}
+
+@keyframes bounce-subtle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.cta-bounce {
+    animation: bounce-subtle 2s infinite;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
