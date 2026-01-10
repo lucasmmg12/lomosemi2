@@ -5,52 +5,52 @@ const PHONE_NUMBER = "5492645308449";
 
 const PRODUCTS = [
     // PIZZAS
-    { id: 101, category: 'pizzas', name: 'Pizza Muzza', desc: 'Salsa, muzzarella, aceitunas.', price: 8000, img: '/Pizza Muzzarela.png' },
-    { id: 102, category: 'pizzas', name: 'Pizza Especial', desc: 'Jamón, morrones, aceitunas.', price: 9000, img: '/Pizza Especial.png' },
-    { id: 103, category: 'pizzas', name: 'Pizza Emi', desc: 'La especialidad de la casa.', price: 10000, img: '/Pizza Emi.png' },
+    { id: 101, category: 'pizzas', name: 'Pizza Muzza', desc: 'Salsa, muzzarella, aceitunas.', price: 8000, img: '/Pizza Muzzarela.webp' },
+    { id: 102, category: 'pizzas', name: 'Pizza Especial', desc: 'Jamón, morrones, aceitunas.', price: 9000, img: '/Pizza Especial.webp' },
+    { id: 103, category: 'pizzas', name: 'Pizza Emi', desc: 'La especialidad de la casa.', price: 10000, img: '/Pizza Emi.webp' },
 
     // LOMIPIZZAS
-    { id: 201, category: 'pizzas', name: 'Lomipizza Entera', desc: 'Combinación bomba de lomo y pizza.', price: 28000, img: '/lomipizza.png' },
-    { id: 202, category: 'pizzas', name: 'Lomipizza Mitad', desc: 'Media porción de nuestra lomipizza.', price: 20000, img: '/lomipizza.png' },
+    { id: 201, category: 'pizzas', name: 'Lomipizza Entera', desc: 'Combinación bomba de lomo y pizza.', price: 28000, img: '/lomipizza.webp' },
+    { id: 202, category: 'pizzas', name: 'Lomipizza Mitad', desc: 'Media porción de nuestra lomipizza.', price: 20000, img: '/lomipizza.webp' },
 
     // BURGERS (Con Variantes)
     {
-        id: 301, category: 'hamburguesas', name: 'Burger', desc: 'Hamburguesa casera clásica.', price: 5000, img: '/burger simple.png',
+        id: 301, category: 'hamburguesas', name: 'Burger', desc: 'Hamburguesa casera clásica.', price: 5000, img: '/burger simple.webp',
         isDoubleOption: true, doublePriceDelta: 1000 // Especial 5000, Doble 6000 -> Diff 1000
     },
     {
-        id: 302, category: 'hamburguesas', name: 'Pan Papas', desc: 'Con exclusivo pan de papa.', price: 6000, img: '/Hamburguesa pan de papa.png',
+        id: 302, category: 'hamburguesas', name: 'Pan Papas', desc: 'Con exclusivo pan de papa.', price: 6000, img: '/Hamburguesa pan de papa.webp',
         isDoubleOption: true, doublePriceDelta: 1000 // Esp 6000, Doble 7000
     },
     {
-        id: 303, category: 'hamburguesas', name: 'Gigante', desc: 'Tamaño XL para valientes.', price: 7000, img: '/Hamburguesa Pan Normal.png',
+        id: 303, category: 'hamburguesas', name: 'Gigante', desc: 'Tamaño XL para valientes.', price: 7000, img: '/Hamburguesa Pan Normal.webp',
         isDoubleOption: true, doublePriceDelta: 2000 // Esp 7000, Doble 9000 -> Diff 2000
     },
 
     // LOMOS & PACHATAS (Con Variantes)
     {
-        id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 6500, img: '/Lomo 25cm.png',
+        id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 6500, img: '/Lomo 25cm.webp',
         isDoubleOption: true, doublePriceDelta: 4000
     },
     {
-        id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 12000, img: '/Lomo 50cm.png',
+        id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 12000, img: '/Lomo 50cm.webp',
         isDoubleOption: true, doublePriceDelta: 8000 // Esp 12000, Doble 20000 -> Diff 8000
     },
     {
-        id: 402, category: 'sandwiches', name: 'Pachata', desc: 'Nuestro sándwich estrella.', price: 12000, img: '/Pachata emi.png',
+        id: 402, category: 'sandwiches', name: 'Pachata', desc: 'Nuestro sándwich estrella.', price: 12000, img: '/Pachata emi.webp',
         isDoubleOption: true, doublePriceDelta: 8000 // Esp 12000, Doble 20000
     },
 
     // MIGAS & TOSTADOS
-    { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 5000, img: '/Tostado Miga.png' },
-    { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 6000, img: '/Tostado Miga.png' },
-    { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 18000, img: '/Barroluco.png' },
+    { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 5000, img: '/Tostado Miga.webp' },
+    { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 6000, img: '/Tostado Miga.webp' },
+    { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 18000, img: '/Barroluco.webp' },
 
     // FRITAS & MINUTAS
-    { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 4000, img: '/papas fritas comunes.png' },
-    { id: 602, category: 'minutas', name: 'Papas Grandes', desc: 'Para compartir.', price: 7000, img: '/papas fritas comunes.png' },
+    { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 4000, img: '/papas fritas comunes.webp' },
+    { id: 602, category: 'minutas', name: 'Papas Grandes', desc: 'Para compartir.', price: 7000, img: '/papas fritas comunes.webp' },
     {
-        id: 603, category: 'minutas', name: 'Salchipapa', desc: 'Papas con salchicha. ¡Agregale cosas!', price: 9000, img: '/Salchipapa.png',
+        id: 603, category: 'minutas', name: 'Salchipapa', desc: 'Papas con salchicha. ¡Agregale cosas!', price: 9000, img: '/Salchipapa.webp',
         addons: [
             { name: 'Cheddar', price: 0 },
             { name: 'Panceta', price: 0 }
@@ -100,7 +100,7 @@ function renderProducts(items) {
         return `
         <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-red-custom/50 transition-all group flex flex-col h-full relative" id="card-${p.id}">
             <div class="h-48 overflow-hidden relative">
-                <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <img src="${p.img}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
             <div class="p-5 flex-1 flex flex-col">
                 <div class="flex justify-between items-start mb-1">
@@ -356,10 +356,10 @@ function addComboToCart(type) {
 
     // Image mapping
     const imgMap = {
-        'burger': '/burger simple.png',
-        'lomo': '/Lomo 50cm.png',
-        'lomipizza': '/lomipizza.png',
-        'mix': '/Salchipapa.png'
+        'burger': '/burger simple.webp',
+        'lomo': '/Lomo 50cm.webp',
+        'lomipizza': '/lomipizza.webp',
+        'mix': '/Salchipapa.webp'
     };
 
     const cartId = `promo-${type}-${name}`;
@@ -409,7 +409,7 @@ function addSpecificCombo(name, price) {
             name: name,
             desc: 'Super Promo',
             price: price,
-            img: '/Flyer Promos.png', // Or Logo? Step 246 replaced it with Logo. I will use Logo here if it matches the visual.
+            img: '/Logo emi.webp', // Or Logo? Step 246 replaced it with Logo. I will use Logo here if it matches the visual.
             qty: 1
         });
     }
