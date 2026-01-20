@@ -58,211 +58,197 @@
 
     <!-- Promociones Section -->
     <section id="promociones" class="max-w-[1400px] mx-auto px-4 py-10 border-b border-white/10">
-        <h3 class="font-title text-4xl text-accent-gold mb-8 text-center tracking-wide">🔥 SUPER PROMOS & COMBOS 🔥</h3>
+        <h3 class="font-title text-4xl text-accent-gold mb-8 text-center tracking-wide">🔥 PROMOS CON FRITAS 🔥</h3>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Super Promos (Salchipapas) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- BURGER (1-5) -->
+            <div
+                class="bg-gradient-to-br from-orange-900/40 to-black border border-orange-500/30 p-6 rounded-2xl relative overflow-hidden group flex flex-col">
+                <div
+                    class="absolute top-0 right-0 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                    BURGER</div>
+                <div class="flex gap-4 items-center mb-4">
+                    <img src="/burger simple.webp" class="w-24 h-24 object-cover rounded-xl" alt="Burger">
+                    <div>
+                        <h4 class="font-title text-2xl text-white">Burger</h4>
+                        <p class="text-xs text-gray-400">Con papas fritas</p>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-2 mb-4">
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 1 Burger + Frita', 8000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$8.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">2 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 2 Burger + Frita', 13000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$13.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">3 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 3 Burger + Frita', 18000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$18.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">4 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 4 Burger + Frita', 23000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$23.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">5 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 5 Burger + Frita', 28000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$28.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BURGER DOBLE (6-10) -->
+            <div
+                class="bg-gradient-to-br from-orange-900/40 to-black border border-orange-500/30 p-6 rounded-2xl relative overflow-hidden group flex flex-col">
+                <div
+                    class="absolute top-0 right-0 bg-orange-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                    BURGER DOBLE</div>
+                <div class="flex gap-4 items-center mb-4">
+                    <img src="/burger simple.webp" class="w-24 h-24 object-cover rounded-xl" alt="Burger Doble">
+                    <div>
+                        <h4 class="font-title text-2xl text-white">Burger Doble</h4>
+                        <p class="text-xs text-gray-400">Con papas fritas</p>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-2 mb-4">
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 1 Burger Doble + Frita', 9000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$9.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">2 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 2 Burger Doble + Frita', 15000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$15.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">3 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 3 Burger Doble + Frita', 21000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$21.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">4 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 4 Burger Doble + Frita', 27000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$27.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">5 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 5 Burger Doble + Frita', 33000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$33.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOMOS-PACHATAS (11-15) -->
             <div
                 class="bg-gradient-to-br from-red-900/40 to-black border border-red-500/30 p-6 rounded-2xl relative overflow-hidden group flex flex-col">
                 <div
                     class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
-                    SUPER PROMO</div>
+                    LOMOS-PACHATAS</div>
                 <div class="flex gap-4 items-center mb-4">
-                    <img src="/Logo emi.webp" class="w-24 h-24 object-contain rounded-xl" alt="Promo">
+                    <img src="/Lomo 50cm.webp" class="w-24 h-24 object-cover rounded-xl" alt="Lomos">
                     <div>
-                        <p class="text-xs text-gray-400">Las promos más bombas de la casa.</p>
+                        <h4 class="font-title text-2xl text-white">Lomos-Pachatas</h4>
+                        <p class="text-xs text-gray-400">Con papas fritas</p>
                     </div>
                 </div>
 
-                <!-- Lista de opciones manuales -->
                 <div class="flex-1 space-y-2 mb-4">
                     <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
-                        <span class="text-gray-300">1 Lomi Entera + Fritas</span>
-                        <button onclick="addSpecificCombo('Promo Salchi: 1 Lomi Entera', 36000)"
-                            class="text-accent-gold font-bold hover:text-white transition">$36.000 <span
+                        <span class="text-gray-300">1 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 1 Lomo + Frita', 15000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$15.000 <span
                                 class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
                     <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
-                        <span class="text-gray-300">Media Lomi + Fritas</span>
-                        <button onclick="addSpecificCombo('Promo Salchi: Media Lomi', 28000)"
-                            class="text-accent-gold font-bold hover:text-white transition">$28.000 <span
+                        <span class="text-gray-300">2 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 2 Lomos + Frita', 27000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$27.000 <span
                                 class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
                     <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
-                        <span class="text-gray-300">1 Barroluco + Fritas</span>
-                        <button onclick="addSpecificCombo('Promo Salchi: 1 Barroluco', 26000)"
-                            class="text-accent-gold font-bold hover:text-white transition">$26.000 <span
+                        <span class="text-gray-300">3 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 3 Lomos + Frita', 39000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$39.000 <span
                                 class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
                     <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
-                        <span class="text-gray-300">2 Lomos Gig + Fritas</span>
-                        <button onclick="addSpecificCombo('Promo Salchi: 2 Lomos Gig', 48000)"
-                            class="text-accent-gold font-bold hover:text-white transition">$48.000 <span
+                        <span class="text-gray-300">4 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 4 Lomos + Frita', 51000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$51.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">5 + frita</span>
+                        <button onclick="addSpecificCombo('Promo: 5 Lomos + Frita', 63000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$63.000 <span
                                 class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Combos Lomipizza -->
+            <!-- SUPER PROMOS (16-20) -->
             <div
-                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="/lomipizza.webp"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        alt="Combo Lomipizza">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
-                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">LOMIPIZZAS</h4>
-                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
-                        SALCHIPAPA</span>
-                </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <p class="text-gray-400 text-sm mb-4">Lo mejor de dos mundos + Salchipapas.</p>
-
-                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
-                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
-                            Opción:</label>
-                        <select id="combo-lomipizza-select" onchange="updateComboPrice('lomipizza')"
-                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
-                            <option value="1 Lomi Entera|36000">1 Lomi Entera ($36.000)</option>
-                            <option value="Media Lomi|28000">Media Lomi ($28.000)</option>
-                        </select>
-                    </div>
-
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                        <div class="flex flex-col">
-                            <span class="text-xs text-gray-500">Precio Final</span>
-                            <span id="combo-lomipizza-display"
-                                class="font-title text-3xl text-red-custom">$36.000</span>
-                        </div>
-                        <button onclick="addComboToCart('lomipizza')"
-                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
-                            AGREGAR
-                        </button>
+                class="bg-gradient-to-br from-yellow-900/40 to-black border border-yellow-500/30 p-6 rounded-2xl relative overflow-hidden group flex flex-col">
+                <div
+                    class="absolute top-0 right-0 bg-yellow-600 text-black text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                    SUPER PROMOS</div>
+                <div class="flex gap-4 items-center mb-4">
+                    <img src="/Logo emi.webp" class="w-24 h-24 object-contain rounded-xl" alt="Super Promos">
+                    <div>
+                        <h4 class="font-title text-2xl text-white">Super Promos</h4>
+                        <p class="text-xs text-gray-400">Las más bombas</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Combos Mix -->
-            <div
-                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="/Salchipapa.webp"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        alt="Combo Mix">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
-                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">ESPECIALES</h4>
-                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
-                        SALCHIPAPA</span>
-                </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <p class="text-gray-400 text-sm mb-4">Barrolucos y Lomos Gigantes recargados.</p>
-
-                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
-                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
-                            Opción:</label>
-                        <select id="combo-mix-select" onchange="updateComboPrice('mix')"
-                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
-                            <option value="1 Barroluco|26000">1 Barroluco ($26.000)</option>
-                            <option value="2 Lomos Gigantes|48000">2 Lomos Gigantes ($48.000)</option>
-                        </select>
+                <div class="flex-1 space-y-2 mb-4">
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 Lomo Gigante</span>
+                        <button onclick="addSpecificCombo('Super Promo: 1 Lomo Gigante', 23000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$23.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
-
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                        <div class="flex flex-col">
-                            <span class="text-xs text-gray-500">Precio Final</span>
-                            <span id="combo-mix-display" class="font-title text-3xl text-red-custom">$26.000</span>
-                        </div>
-                        <button onclick="addComboToCart('mix')"
-                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
-                            AGREGAR
-                        </button>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">Media Lomi</span>
+                        <button onclick="addSpecificCombo('Super Promo: Media Lomi', 23000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$23.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
-                </div>
-            </div>
-
-            <!-- Combos Burger Card Interactiva -->
-            <div
-                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="/burger simple.webp"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        alt="Combo Burger">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
-                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">COMBOS BURGER
-                    </h4>
-                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
-                        FRITAS</span>
-                </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <p class="text-gray-400 text-sm mb-4">Hamburguesas caseras + Papas Fritas. ¡Elegí tu pack ideal!</p>
-
-                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
-                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
-                            Cantidad:</label>
-                        <select id="combo-burger-select" onchange="updateComboPrice('burger')"
-                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
-                            <option value="1 Burger + Frita|8000">1 Burger + Frita ($8.000)</option>
-                            <option value="2 Burger + Frita|13000">2 Burger + Frita ($13.000)</option>
-                            <option value="3 Burger + Frita|18000">3 Burger + Frita ($18.000)</option>
-                            <option value="4 Burger + Frita|23000">4 Burger + Frita ($23.000)</option>
-                            <option value="5 Burger + Frita|28000">5 Burger + Frita ($28.000)</option>
-                        </select>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 Lomi Entera</span>
+                        <button onclick="addSpecificCombo('Super Promo: 1 Lomi Entera', 31000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$31.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
-
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                        <div class="flex flex-col">
-                            <span class="text-xs text-gray-500">Precio Final</span>
-                            <span id="combo-burger-display" class="font-title text-3xl text-red-custom">$8.000</span>
-                        </div>
-                        <button onclick="addComboToCart('burger')"
-                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
-                            AGREGAR
-                        </button>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">1 Barroluco</span>
+                        <button onclick="addSpecificCombo('Super Promo: 1 Barroluco', 21000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$21.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
-                </div>
-            </div>
-
-            <!-- Combos Lomos Card Interactiva -->
-            <div
-                class="bg-white/5 border border-white/10 p-0 rounded-2xl flex flex-col relative overflow-hidden group hover:border-red-custom/50 transition-all">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="/Lomo 50cm.webp"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        alt="Combo Lomos">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-90"></div>
-                    <h4 class="absolute bottom-4 left-6 font-title text-3xl text-white drop-shadow-lg">COMBOS LOMOS</h4>
-                    <span class="absolute bottom-4 right-6 text-xs bg-red-600 text-white px-2 py-1 rounded font-bold">+
-                        FRITAS</span>
-                </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <p class="text-gray-400 text-sm mb-4">Lomos/Pachatas + Papas Fritas. ¡Para compartir!</p>
-
-                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 mb-6">
-                        <label class="text-xs text-gray-500 block mb-1 uppercase tracking-wider font-bold">Seleccionar
-                            Cantidad:</label>
-                        <select id="combo-lomo-select" onchange="updateComboPrice('lomo')"
-                            class="w-full bg-white text-black p-1 rounded text-sm font-bold outline-none cursor-pointer hover:bg-gray-100 transition">
-                            <option value="1 Lomo + Frita|15000">1 Lomo + Frita ($15.000)</option>
-                            <option value="2 Lomo + Frita|27000">2 Lomo + Frita ($27.000)</option>
-                            <option value="3 Lomo + Frita|39000">3 Lomo + Frita ($39.000)</option>
-                            <option value="4 Lomo + Frita|51000">4 Lomo + Frita ($51.000)</option>
-                            <option value="5 Lomo + Frita|63000">5 Lomo + Frita ($63.000)</option>
-                        </select>
-                    </div>
-
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                        <div class="flex flex-col">
-                            <span class="text-xs text-gray-500">Precio Final</span>
-                            <span id="combo-lomo-display" class="font-title text-3xl text-red-custom">$15.000</span>
-                        </div>
-                        <button onclick="addComboToCart('lomo')"
-                            class="bg-red-custom hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition shadow-lg shadow-red-900/20 active:scale-95">
-                            AGREGAR
-                        </button>
+                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-1">
+                        <span class="text-gray-300">2 Hamb Gigante</span>
+                        <button onclick="addSpecificCombo('Super Promo: 2 Hamb Gigante', 17000)"
+                            class="text-accent-gold font-bold hover:text-white transition">$17.000 <span
+                                class="text-xs bg-white/10 px-1 rounded ml-1">+</span></button>
                     </div>
                 </div>
             </div>

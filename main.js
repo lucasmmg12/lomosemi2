@@ -29,12 +29,12 @@ const PRODUCTS = [
 
     // LOMOS & PACHATAS (Con Variantes)
     {
-        id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 6500, img: '/Lomo 25cm.webp',
-        isDoubleOption: true, doublePriceDelta: 4000
+        id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 12000, img: '/Lomo 25cm.webp',
+        isDoubleOption: true, doublePriceDelta: 8000
     },
     {
-        id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 12000, img: '/Lomo 50cm.webp',
-        isDoubleOption: true, doublePriceDelta: 8000 // Esp 12000, Doble 20000 -> Diff 8000
+        id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 20000, img: '/Lomo 50cm.webp',
+        isDoubleOption: true, doublePriceDelta: 10000 // Esp 20000, Doble 30000 -> Diff 10000
     },
     {
         id: 402, category: 'sandwiches', name: 'Pachata', desc: 'Nuestro sándwich estrella.', price: 12000, img: '/Pachata emi.webp',
