@@ -45,6 +45,7 @@ const PRODUCTS = [
     { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 5000, img: '/Tostado Miga.webp' },
     { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 6000, img: '/Tostado Miga.webp' },
     { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 18000, img: '/Barroluco.webp' },
+    { id: 504, category: 'sandwiches', name: 'Super Barroluco Gigante', desc: '400g de carne, 30x30cm. Jamón cocido, queso, lechuga, tomate, mayonesa y huevo.', price: 28000, img: '/Barroluco.webp', featured: true },
 
     // FRITAS & MINUTAS
     { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 4000, img: '/papas fritas comunes.webp' },
@@ -444,6 +445,34 @@ function addSpecificCombo(name, price) {
     }
 }
 
+function addFeaturedToCart() {
+    try {
+        const product = PRODUCTS.find(p => p.id === 504);
+        if (!product) return;
+
+        const cartId = `featured-504`;
+        const existing = cart.find(item => item.cartId === cartId);
+
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({
+                ...product,
+                cartId: cartId,
+                qty: 1
+            });
+        }
+
+        updateCartUI();
+
+        const evt = window.event;
+        const btn = evt ? (evt.target.closest('button') || evt.target) : null;
+        visualFeedback(btn, '¡Agregado!', 'bg-green-600');
+    } catch (err) {
+        console.error("Error in addFeaturedToCart:", err);
+    }
+}
+
 init();
 
 // Expose functions to window for HTML onclick compatibility
@@ -458,3 +487,4 @@ window.addComboToCart = addComboToCart;
 window.addSpecificCombo = addSpecificCombo;
 window.changeQtyUI = changeQtyUI;
 window.updateCardPrice = updateCardPrice;
+window.addFeaturedToCart = addFeaturedToCart;

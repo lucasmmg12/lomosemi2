@@ -273,6 +273,135 @@
     </section>
 
     <!-- Menu Section -->
+
+    <!-- ⭐ PRODUCTO ESTRELLA — Super Barroluco Gigante -->
+    <section id="producto-estrella" class="max-w-[1400px] mx-auto px-3 sm:px-4 py-10 md:py-16">
+        <div
+            class="featured-card relative rounded-2xl md:rounded-3xl overflow-hidden border border-yellow-500/40 bg-gradient-to-br from-yellow-900/20 via-red-900/10 to-black">
+            <!-- Glow de fondo -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-yellow-500/8 rounded-full blur-[80px] md:blur-[120px] featured-glow">
+                </div>
+                <div
+                    class="absolute top-0 right-0 w-[200px] md:w-[300px] h-[200px] md:h-[300px] bg-red-600/10 rounded-full blur-[60px] md:blur-[80px]">
+                </div>
+            </div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row items-center gap-0 lg:gap-12">
+                <!-- Imagen — Full bleed en móvil, con rounded solo en desktop -->
+                <div class="w-full lg:w-1/2 relative group">
+                    <div class="relative overflow-hidden lg:rounded-2xl lg:m-6 lg:shadow-2xl lg:shadow-black/60">
+                        <img src="/Barroluco.webp" alt="Super Barroluco Gigante"
+                            class="w-full h-72 sm:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <!-- Gradiente más intenso en mobile para fundir imagen con contenido -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent lg:from-black/60 lg:via-transparent">
+                        </div>
+
+                        <!-- Badge ESTRELLA — esquina superior izquierda -->
+                        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 z-20">
+                            <span
+                                class="inline-flex items-center gap-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-[10px] sm:text-xs font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg shadow-yellow-500/30 featured-badge">
+                                ⭐ ESTRELLA DE LA CASA
+                            </span>
+                        </div>
+
+                        <!-- Badge NUEVO — esquina superior derecha -->
+                        <div class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20">
+                            <span
+                                class="bg-red-custom text-white text-[10px] sm:text-sm font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg shadow-lg">
+                                🔥 NUEVO
+                            </span>
+                        </div>
+
+                        <!-- Título superpuesto sobre la imagen SOLO en móvil -->
+                        <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 lg:hidden">
+                            <p class="text-yellow-400 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1">
+                                🏆 Producto Estrella</p>
+                            <h3 class="font-title text-3xl sm:text-4xl text-white leading-none">
+                                SUPER BARROLUCO
+                                <span class="text-red-custom"> GIGANTE</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido -->
+                <div
+                    class="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-6 lg:px-0 lg:pr-10 mt-3 lg:mt-0 pb-5 sm:pb-6 lg:py-10">
+                    <!-- Título solo visible en desktop (en mobile va sobre la imagen) -->
+                    <div class="hidden lg:block">
+                        <p class="text-yellow-400 text-sm font-bold tracking-widest uppercase mb-2">🏆 Producto Estrella
+                        </p>
+                        <h3 class="font-title text-5xl xl:text-6xl text-white mb-3 leading-none">
+                            SUPER BARROLUCO<br>
+                            <span class="text-red-custom">GIGANTE</span>
+                        </h3>
+                    </div>
+
+                    <p class="text-gray-300 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 max-w-md mx-auto lg:mx-0">
+                        30x30cm de puro sabor. Una bestia que no podés dejar pasar.
+                    </p>
+
+                    <!-- Specs Chips — compactos en mobile -->
+                    <div class="flex justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6">
+                        <span
+                            class="inline-flex items-center gap-1.5 sm:gap-2 bg-white/5 border border-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm">
+                            <span class="text-red-custom font-bold">🥩</span>
+                            <span class="text-white font-bold">400g</span>
+                            <span class="text-gray-400 hidden sm:inline">de carne</span>
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-1.5 sm:gap-2 bg-white/5 border border-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm">
+                            <span class="text-red-custom font-bold">📐</span>
+                            <span class="text-white font-bold">30x30cm</span>
+                            <span class="text-gray-400 hidden sm:inline">de tamaño</span>
+                        </span>
+                    </div>
+
+                    <!-- Ingredientes — grid 3 columnas en mobile -->
+                    <div class="mb-5 sm:mb-8">
+                        <p class="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider mb-2 sm:mb-3">
+                            Ingredientes Premium</p>
+                        <div
+                            class="grid grid-cols-3 lg:flex lg:flex-wrap justify-center lg:justify-start gap-1.5 sm:gap-2">
+                            <span
+                                class="bg-white/5 text-gray-300 text-[11px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/5 text-center">Jamón
+                                Cocido</span>
+                            <span
+                                class="bg-white/5 text-gray-300 text-[11px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/5 text-center">Queso</span>
+                            <span
+                                class="bg-white/5 text-gray-300 text-[11px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/5 text-center">Lechuga</span>
+                            <span
+                                class="bg-white/5 text-gray-300 text-[11px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/5 text-center">Tomate</span>
+                            <span
+                                class="bg-white/5 text-gray-300 text-[11px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/5 text-center">Mayonesa</span>
+                            <span
+                                class="bg-white/5 text-gray-300 text-[11px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/5 text-center">Huevo</span>
+                        </div>
+                    </div>
+
+                    <!-- Precio y CTA — full width en mobile -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+                        <div>
+                            <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">$28.000</span>
+                        </div>
+                        <button onclick="addFeaturedToCart()"
+                            class="featured-cta w-full sm:w-auto bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 sm:gap-3 shadow-lg shadow-red-900/50 transition-all duration-300 hover:scale-105 hover:shadow-red-900/70 active:scale-95">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            AGREGAR AL PEDIDO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main id="menu" class="max-w-7xl mx-auto px-4 py-20">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
