@@ -1,7 +1,7 @@
 import './style.css'
 
 // Configuración y Datos
-const PHONE_NUMBER = "5492645308449";
+const PHONE_NUMBER = "5492645277977";
 
 const PRODUCTS = [
     // PIZZAS
