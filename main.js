@@ -15,43 +15,43 @@ const PRODUCTS = [
 
     // BURGERS (Con Variantes)
     {
-        id: 301, category: 'hamburguesas', name: 'Burger', desc: 'Hamburguesa casera clásica.', price: 5000, img: '/burger simple.webp',
+        id: 301, category: 'hamburguesas', name: 'Burger', desc: 'Hamburguesa casera clásica.', price: 6000, img: '/burger simple.webp',
         isDoubleOption: true, doublePriceDelta: 1000 // Especial 5000, Doble 6000 -> Diff 1000
     },
     {
-        id: 302, category: 'hamburguesas', name: 'Pan Papas', desc: 'Con exclusivo pan de papa.', price: 6000, img: '/Hamburguesa pan de papa.webp',
+        id: 302, category: 'hamburguesas', name: 'Pan Papas', desc: 'Con exclusivo pan de papa.', price: 7000, img: '/Hamburguesa pan de papa.webp',
         isDoubleOption: true, doublePriceDelta: 1000 // Esp 6000, Doble 7000
     },
     {
-        id: 303, category: 'hamburguesas', name: 'Gigante', desc: 'Tamaño XL para valientes.', price: 7000, img: '/Hamburguesa Pan Normal.webp',
+        id: 303, category: 'hamburguesas', name: 'Gigante', desc: 'Tamaño XL para valientes.', price: 8000, img: '/Hamburguesa Pan Normal.webp',
         isDoubleOption: true, doublePriceDelta: 2000 // Esp 7000, Doble 9000 -> Diff 2000
     },
 
     // LOMOS & PACHATAS (Con Variantes)
     {
-        id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 12000, img: '/Lomo 25cm.webp',
-        isDoubleOption: true, doublePriceDelta: 8000
+        id: 401, category: 'lomos', name: 'Lomo 25cm', desc: 'Carne tierna, lechuga, tomate, mayo.', price: 15000, img: '/Lomo 25cm.webp',
+        isDoubleOption: true, doublePriceDelta: 10000
     },
     {
-        id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 20000, img: '/Lomo 50cm.webp',
+        id: 403, category: 'lomos', name: 'Lomo 50cm', desc: 'Carne tierna, lechuga, tomate, mayo. Ideal para compartir.', price: 25000, img: '/Lomo 50cm.webp',
         isDoubleOption: true, doublePriceDelta: 10000 // Esp 20000, Doble 30000 -> Diff 10000
     },
     {
-        id: 402, category: 'sandwiches', name: 'Pachata', desc: 'Nuestro sándwich estrella.', price: 12000, img: '/Pachata emi.webp',
-        isDoubleOption: true, doublePriceDelta: 8000 // Esp 12000, Doble 20000
+        id: 402, category: 'sandwiches', name: 'Pachata', desc: 'Nuestro sándwich estrella.', price: 15000, img: '/Pachata emi.webp',
+        isDoubleOption: true, doublePriceDelta: 10000 // Esp 12000, Doble 20000
     },
 
     // MIGAS & TOSTADOS
-    { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 5000, img: '/Tostado Miga.webp' },
-    { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 6000, img: '/Tostado Miga.webp' },
-    { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 18000, img: '/Barroluco.webp' },
+    { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 6000, img: '/Tostado Miga.webp' },
+    { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 7000, img: '/Tostado Miga.webp' },
+    { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 23000, img: '/Barroluco.webp' },
     { id: 504, category: 'sandwiches', name: 'Super Barroluco Gigante', desc: '400g de carne, 30x30cm. Jamón cocido, queso, lechuga, tomate, mayonesa y huevo.', price: 28000, img: '/Barroluco.webp', featured: true },
 
     // FRITAS & MINUTAS
-    { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 4000, img: '/papas fritas comunes.webp' },
-    { id: 602, category: 'minutas', name: 'Papas Grandes', desc: 'Para compartir.', price: 7000, img: '/papas fritas comunes.webp' },
+    { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 5000, img: '/papas fritas comunes.webp' },
+    { id: 602, category: 'minutas', name: 'Papas Grandes', desc: 'Para compartir.', price: 8000, img: '/papas fritas comunes.webp' },
     {
-        id: 603, category: 'minutas', name: 'Salchipapa', desc: 'Papas con salchicha. ¡Agregale cosas!', price: 9000, img: '/Salchipapa.webp',
+        id: 603, category: 'minutas', name: 'Salchipapa', desc: 'Papas con salchicha. ¡Agregale cosas!', price: 10000, img: '/Salchipapa.webp',
         addons: [
             { name: 'Cheddar', price: 0 },
             { name: 'Panceta', price: 0 }
