@@ -5,13 +5,13 @@ const PHONE_NUMBER = "5492645277977";
 
 const PRODUCTS = [
     // PIZZAS
-    { id: 101, category: 'pizzas', name: 'Pizza Muzza', desc: 'Salsa, muzzarella, aceitunas.', price: 8000, img: '/Pizza Muzzarela.webp' },
-    { id: 102, category: 'pizzas', name: 'Pizza Especial', desc: 'Jamón, morrones, aceitunas.', price: 9000, img: '/Pizza Especial.webp' },
-    { id: 103, category: 'pizzas', name: 'Pizza Emi', desc: 'La especialidad de la casa.', price: 10000, img: '/Pizza Emi.webp' },
+    { id: 101, category: 'pizzas', name: 'Pizza Muzza', desc: 'Salsa, muzzarella, aceitunas.', price: 9000, img: '/Pizza Muzzarela.webp' },
+    { id: 102, category: 'pizzas', name: 'Pizza Especial', desc: 'Jamón, morrones, aceitunas.', price: 10000, img: '/Pizza Especial.webp' },
+    { id: 103, category: 'pizzas', name: 'Pizza Emi', desc: 'La especialidad de la casa.', price: 11000, img: '/Pizza Emi.webp' },
 
     // LOMIPIZZAS
-    { id: 201, category: 'pizzas', name: 'Lomipizza Entera', desc: 'Combinación bomba de lomo y pizza.', price: 28000, img: '/lomipizza.webp' },
-    { id: 202, category: 'pizzas', name: 'Lomipizza Mitad', desc: 'Media porción de nuestra lomipizza.', price: 20000, img: '/lomipizza.webp' },
+    { id: 201, category: 'pizzas', name: 'Lomipizza Entera', desc: 'Combinación bomba de lomo y pizza.', price: 35000, img: '/lomipizza.webp' },
+    { id: 202, category: 'pizzas', name: 'Lomipizza Mitad', desc: 'Media porción de nuestra lomipizza.', price: 25000, img: '/lomipizza.webp' },
 
     // BURGERS (Con Variantes)
     {
