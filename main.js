@@ -45,7 +45,7 @@ const PRODUCTS = [
     { id: 501, category: 'sandwiches', name: 'Tostado', desc: 'Sándwich de miga tostado.', price: 6000, img: '/Tostado Miga.webp' },
     { id: 502, category: 'sandwiches', name: 'Americano', desc: 'Tostado especial.', price: 7000, img: '/Tostado Miga.webp' },
     { id: 503, category: 'sandwiches', name: 'Barroluco', desc: 'Doble miga con carne y queso.', price: 23000, img: '/Barroluco.webp' },
-    { id: 504, category: 'sandwiches', name: 'Super Barroluco Gigante', desc: '400g de carne, 30x30cm. Jamón cocido, queso, lechuga, tomate, mayonesa y huevo.', price: 28000, img: '/Barroluco.webp', featured: true },
+    { id: 504, category: 'sandwiches', name: 'Super Barroluco Gigante', desc: '400g de carne, 30x30cm. Jamón cocido, queso, lechuga, tomate, mayonesa y huevo.', price: 35000, img: '/Barroluco.webp', featured: true },
 
     // FRITAS & MINUTAS
     { id: 601, category: 'minutas', name: 'Papas Chicas', desc: 'Porción individual.', price: 5000, img: '/papas fritas comunes.webp' },
